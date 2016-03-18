@@ -27,6 +27,11 @@
 7. ip VARCHAR (IPv4, IPv6)
 8. userAgent TEXT
 
+## email_confirm
+
+1. email VARCHAR 128
+2. token  VARCHAR 128
+
 ## article
 
 1. id_article (unique, primary) INT
