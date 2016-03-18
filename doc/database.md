@@ -30,7 +30,7 @@
 
 ## email_confirm
 
-1. email VARCHAR 128
+1. email (unique, primary) VARCHAR 128
 2. token  VARCHAR 128
 3. failed BOOL
 
