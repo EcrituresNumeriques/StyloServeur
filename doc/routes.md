@@ -40,7 +40,7 @@ RESPONSE {"error":false, "id_session":SESSION, "privateKey" = PRIVATEKEY, "state
 
 ## user
 
-##GET /api/user/update?[login=LOGIN&][password=PASSWORD&][name=NAMEOFTHESESSION&]state=STATE&signature=PRIVATEKEY([email=EMAIL&][login=LOGIN&][password=PASSWORD][&name=NAMEOFTHESESSION&]state=STATE)
+### GET /api/user/update?[login=LOGIN&][password=PASSWORD&][name=NAMEOFTHESESSION&]state=STATE&signature=PRIVATEKEY([email=EMAIL&][login=LOGIN&][password=PASSWORD][&name=NAMEOFTHESESSION&]state=STATE)
 
 The server updates infos of the user
 
