@@ -26,11 +26,13 @@
 6. update TIMESTAMP
 7. ip VARCHAR (IPv4, IPv6)
 8. userAgent TEXT
+9. failed BOOL
 
 ## email_confirm
 
 1. email VARCHAR 128
 2. token  VARCHAR 128
+3. failed BOOL
 
 ## article
 
