@@ -16,7 +16,7 @@ the server uses the publicKey contained in the session table to decrypt the sign
 
 1. GET /api/user/session?login=LOGIN&password=PASSWORD => The server creates a new user_session row, then creates a new state row in database where id_session = IDSESSION, token = TOKEN (random string), access = false, time = now(), then generates the STATE variable like "IDSESSION-TOKEN" and sends it to the email of the user.
 2. RESPONSE {"error":false} || {"error":true, "reason":WHYITFAILED}
-3. GET /api/auth?state=CODERECEIVEDBYEMAIL&name=NAMEOFTHESESSION => The server generate a PUBLIC/PRIVATE keys pair, updates the user_session row name and publicKey values 
+3. GET /api/user/auth?state=CODERECEIVEDBYEMAIL&name=NAMEOFTHESESSION => The server generate a PUBLIC/PRIVATE keys pair, updates the user_session row name and publicKey values 
 4. RESPONSE {"error":false,"user_session":USERSESSION,"state":STATE,"privateKey":PRIVATEKEY} || {"error":true, "reason":WHYITFAILED}
 5. GET /api/user/log?id_session=ID_SESSION&state=STATE&signature=PRIVATEKEY(id_session=ID_SESSION&state=STATE) => 
 the server uses the publicKey contained in the session table to decrypt the signature and makes sure the client can sign stuff, if that's the case, access column is switch to true
