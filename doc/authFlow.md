@@ -28,3 +28,5 @@ the server uses the publicKey contained in the session table to decrypt the sign
 3. GET /api/user/validate?email=EMAIL&token=TOKEN => the server validate the code, set failed to true if the attempt is unsuccesful (need to generate a new token), if successful, sets failed to false, creates user/user_session/user_session_state rows
 4. RESPONSE {"error":false, "id_session":SESSION, "privateKey" = PRIVATEKEY, "state":STATE} || {"error":true, "reason":WHYITFAILED}
 5. GET /api/user/register?email=EMAIL&login=LOGIN&password=PASSWORD&name=NAMEOFTHESESSION&state=STATE&signature=PRIVATEKEY(email=EMAIL&login=LOGIN&password=PASSWORD&name=NAMEOFTHESESSION&state=STATE)
+6. RESPONSE {"error":false, "data",[DATAOFTHEUSER]} || {"error":true, "reason":WHYITFAILED}
+7. => do stuff with the API, on every call include the state parameter and the signature parameter which is the query string (minus the signature parametter itself) signed with the private key
